@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeMyPass - Event Management</title>
+    <link rel="stylesheet" href="mellowship.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="main-logo-hidden">
+        <img src="https://makemypass.com/assets/makemypass-logo-BQEssInq.png" alt="makemypass brand logo">
+        <span>MakeMyPass</span>
+    </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon" style="background-image: url(https://makemypass.com/assets/makemypass-logo-BQEssInq.png);"></div>
+                <div class="logo-text">MakeMyPass</div>
+            </div>
+            <div class="user-info">
+                <span>Hi, adriansmith@admin42</span>
+                <div class="user-avatar">👤</div>
+            </div>
+        </header>
+        <div class="event-header">
+            <div class="back-button">←</div>
+            <div class="demo-tag">DEMO</div>
+            <div class="event-title">Paradox Productions Meet-Up</div>
+            <button class="view-docs">
+                <svg viewBox="0 0 576 512" style="width: 1em; height: 1em; margin-right: 0.5em;">
+                    <path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"></path>
+                </svg>
+                <span>View Docs</span>
+            </button>
+        </div>
+        <div class="nav">
+            <div class="nav-item">Overview</div>
+            <div class="nav-item active">Guests</div>
+            <div class="nav-item">Event Page</div>
+            <div class="nav-item">Form Builder</div>
+            <div class="nav-item">Scan QR</div>
+            <div class="nav-item">In-Event</div>
+            <div class="nav-item">Logs</div>
+            <div class="nav-item">Finance</div>
+            <div class="nav-item">Post Event</div>
+            <div class="nav-item">Child Events</div>
+        </div>
+        <div class="dashboard">
+            <div class="at-a-glance">
+                <div class="glance-header">
+                    <h3>At a Glance</h3>
+                    <div class="time-info">Last Registered 1st May at 7:42 PM</div>
+                </div>
+                <div class="guest-stats">
+                    <div class="unique-guests">
+                        <span class="count">80</span> unique guests
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 73.75%;"></div>
+                    </div>
+                    <div class="shortlisted-unclaimed">
+                        <span class="shortlisted">59 shortlisted</span> | <span class="unclaimed">11 unclaimed</span>
+                    </div>
+                </div>
+                <div class="ticket-summary">
+                    <div class="ticket-item"><span class="ticket-count">(280)</span> Special Ticket</div>
+                    <div class="ticket-item"><span class="ticket-count">(3)</span> Demo Paid Ticket</div>
+                    <div class="ticket-item"><span class="ticket-count">(4)</span> Hackathon</div>
+                    <div class="ticket-item"><span class="ticket-count">(50)</span> New Ticket</div>
+                </div>
+            </div>
+            <div class="guest-actions">
+                <button class="action-button dropped">
+                    <svg viewBox="0 0 512 512" style="width: 1em; height: 1em; margin-right: 0.5em;">
+                        <path d="M416 352c9.375 0 18.75-3.375 25.125-10.125l96-96c12.5-12.5 12.5-32.75 0-45.25l-96-96C434.7 179.4 425.3 176 416 176H160c-17.69 0-32 14.31-32 32s14.31 32 32 32h192l-64 64-64 64h-192c-17.69 0-32 14.31-32 32s14.31 32 32 32h256z"></path>
+                    </svg>
+                    <span>Dropped Users</span>
+                </button>
+                <button class="action-button blacklisted">
+                    <svg viewBox="0 0 512 512" style="width: 1em; height: 1em; margin-right: 0.5em;">
+                        <path d="M448 480c61.9 0 112-50.1 112-112c0-61.9-50.1-112-112-112H64c-35.3 0-64 28.7-64 64s28.7 64 64 64h384zm0-224H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32zM64 160c-35.3 0-64 28.7-64 64s28.7 64 64 64h384c17.7 0 32-14.3 32-32s-14.3-32-32-32H64z"></path>
+                    </svg>
+                    <span>Blacklisted Users</span>
+                </button>
+                <button class="action-button export">
+                    <svg viewBox="0 0 512 512" style="width: 1em; height: 1em; margin-right: 0.5em;">
+                        <path d="M416 352c9.375 0 18.75-3.375 25.125-10.125l96-96c12.5-12.5 12.5-32.75 0-45.25l-96-96C434.7 179.4 425.3 176 416 176H288v-32C288 126.3 261.7 96 224 96S160 126.3 160 160v32H96c-17.69 0-32 14.31-32 32s14.31 32 32 32h320c17.69 0 32-14.31 32-32s-14.31-32-32-32H288v32h128zm-96 64h-96l-64 64-64-64H96c-17.69 0-32 14.31-32 32s14.31 32 32 32h320c17.69 0 32-14.31 32-32s-14.31-32-32-32h-96z"></path>
+                    </svg>
+                    <span>Export Data</span>
+                </button>
+                <button class="action-button add">
+                    <svg viewBox="0 0 448 512" style="width: 1em; height: 1em; margin-right: 0.5em;">
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path>
+                    </svg>
+                    <span>Add Guest</span>
+                </button>
+            </div>
+            <div class="guests-list-section">
+                <div class="guests-list-header">
+                    <h3>Guests List</h3>
+                    <div class="recent-guests">
+                        <div class="guest-avatar" title="Ananthu M P">AM</div>
+                        <div class="guest-avatar" title="Aravind S">AS</div>
+                        <div class="guest-avatar" title="Ananthu M P">AM</div>
+                        <div class="guest-avatar" title="Ananthu M P">AM</div>
+                        <div class="guest-avatar" title="Alefiya Anoop">AA</div>
+                        <div class="guest-avatar" title="Alefiya Anoop">AA</div>
+                        <div class="guest-avatar" title="Admin Appz">AA</div>
+                        <div class="guest-avatar" title="Ananthu M P">AM</div>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <div class="search-icon"></div>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="table-controls">
+                    <div class="recent-guests-count">Recent Guests(30)</div>
+                    <div class="filter-dropdowns">
+                        <div class="dropdown">
+                            <button>Select Multiple</button>
+                        </div>
+                        <div class="dropdown">
+                            <button>Checked In <svg viewBox="0 0 320 512" style="width: 0.75em; margin-left: 0.25em;"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></button>
+                        </div>
+                        <div class="dropdown">
+                            <button>Approval Status <svg viewBox="0 0 320 512" style="width: 0.75em; margin-left: 0.25em;"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></button>
+                        </div>
+                        <div class="dropdown">
+                            <button>Registration Status <svg viewBox="0 0 320 512" style="width: 0.75em; margin-left: 0.25em;"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="guests-table-wrapper">
+                    <table class="guests-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Last Active</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guestsTableBody">
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td>@AnanthuTheBoss</td>
+                                <td>1 week ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ara.Aravind S</td>
+                                <td>Aravind23</td>
+                                <td>1 week ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td>@ananthump222</td>
+                                <td>2 weeks ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td>@ananthumptest</td>
+                                <td>3 weeks ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alefiya Anoop</td>
+                                <td>@alefiyaanoop</td>
+                                <td>4 weeks ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alefiya Anoop</td>
+                                <td>AlefiyaAnoop</td>
+                                <td>4 weeks ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Admin Appz</td>
+                                <td>AdminAppz</td>
+                                <td>4 weeks ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td>ananthuaravindmp</td>
+                                <td>4 weeks ago</td>
+                                <td class="actions">
+                                    <button class="action-icon edit">✏️</button>
+                                    <button class="action-icon delete">🗑️</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <div class="records-count">69 Records</div>
+                    <div class="per-page">Per Page: 30</div>
+                    <div class="page-navigation">
+                        <span>1 of 3</span>
+                        <button class="page-button prev">←</button>
+                        <button class="page-button next">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="hoomans-info">
+                    <img src="https://hoomans.io/hoomans-logo-light.svg" alt="hoomans logo">
+                    <span>© 2024</span>
+                    <a href="https://hoomans.io/site/terms">Terms</a>
+                    <a href="https://hoomans.io/site/privacy">Privacy</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/hoomans-io/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/hoomans_io" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://t.me/hoomans_io" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="mellowship.js"></script>
+</body>
+</html>
